@@ -1,0 +1,29 @@
+<ion-view title="Cadastro">
+    
+    <form name="userForm" novalidate>
+        <ion-content class="padding">
+            <div class="list">
+                <button class="button" ng-click="toIntro()" ng-show="noshow">Do Tutorial Again</button>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" placeholder="Nome" name="name" ng-model="user.name">
+                        </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Sobrenome</span>
+                    <input type="text" placeholder="Sobrenome"  name="lastname" ng-model="user.lastname">
+                        </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Email"  name="email" ng-model="user.email">
+                        </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Endereço</span>
+                    <textarea type="text" placeholder="Endereço"  name="address" ng-model="user.address"></textarea>
+                </label>
+                <button class="button button-block button-balanced" id="btRegister"
+                    ng-click="registerUser()">Cadastrar</button>
+                
+            </div>
+        </ion-content>
+    </form>
+</ion-view>

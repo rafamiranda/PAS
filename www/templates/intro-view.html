@@ -1,0 +1,59 @@
+
+<ion-view title="Bem-vindo">
+
+          <ion-nav-buttons side="left">
+              <button class="button button-positive button-clear no-animation"
+                  ng-click="startApp()" ng-if="!slideIndex">
+                  Pular Intro
+              </button>
+              <button class="button button-positive button-clear no-animation"
+                  ng-click="previous()" ng-if="slideIndex > 0">
+                  Voltar
+              </button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+              <button class="button button-positive button-clear no-animation"
+                  ng-click="next()" ng-if="slideIndex != 2">
+                  Próximo
+              </button>
+              <button class="button button-positive button-clear no-animation"
+                  ng-click="startApp()" ng-if="slideIndex == 2">
+                  Iniciar
+              </button>
+          </ion-nav-buttons>
+          <ion-slide-box on-slide-changed="slideChanged(index)">
+              <ion-slide>
+                  <h3>Obrigado por escolher a <br/>P@S App</h3>
+                  <div class="row">
+                      <div class="col">
+                      <img src="img/500px-LogoPrefeituraSG.png">
+                          </div>
+                          </div>
+                  <p>
+                  Esperamos que esse serviço atenda a população de São Gonçalo a prevenir a Dengue.
+                  </p>
+                  <p>
+                  Contamos com vocês no combate desse mal que aflige nosso munícipio!
+                  </p>
+              </ion-slide>
+              <ion-slide>
+                  <h3>Modo de usar</h3>
+                  <div class="row">
+                      <div class="col">Cadastra-se para localizarmos você e a área afetada com maior eficiência</div>
+                  </div>
+                  <div class="row">
+                      <div class="col">Utilize nosso pequeno formulário de diagnóstico para auxilia a indentificar se está com Dengue</div>
+                  </div>
+                  <div class="row">
+                      <div class="col">Marque no mapa o local onde acredita ter sido picado</div>
+                  </div>
+              </ion-slide>
+              <ion-slide>
+                  <h3>Dúvidas?</h3>
+                  <p>
+                  pas@saogoncalo.rj.gov.br
+                  </p>
+              </ion-slide>
+          </ion-slide-box>
+      </ion-view>
+

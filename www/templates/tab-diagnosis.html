@@ -1,0 +1,52 @@
+<ion-view title="Diagnóstico">
+       <form name="diagnosisForm" novalidate>
+        <ion-content class="padding">
+            <h1>Diagnóstico</h1>
+       <div class="form-group" ng-repeat="field in fields">
+       <!--also suitable for creation-->
+       <label class="item item-input item-floating-label">
+           <span  >{{ field.title }}</span>
+       <br/>
+       <span ng-switch on="field.type.view">
+           <span ng-switch-when="input">
+               <input class="form-control"
+               ng-model="entity[field.name]"
+               type="text"
+               />
+           </span>
+           <span ng-switch-when="checkbox">
+               <input class="form-control"
+               ng-model="entity[field.name]"
+               ng-checked="entity[field.name]"
+               type="checkbox"
+               />
+           </span>
+           <span ng-switch-when="textarea">
+               <textarea class="form-control"
+                   ng-model="entity[field.name]"
+                   ></textarea>
+           </span>
+           <span ng-switch-when="select">
+               <select class="form-control"
+                   ng-model="entity[field.name]"
+                   ng-options="item.id as item.name for item in field.type.options"
+                   ></select>
+           </span>
+           <!--You can add more custom widget types needed for your project-->  
+           <span ng-switch-default>  
+               <span>Unknown widget</span>  
+           </span>  
+       </span>
+       </label>
+       </div>
+       <button class="button button-block button-balanced" id="btRegister"
+           ng-click="sendDiagnose()">Enviar</button>
+
+       </ion-content>
+       </form>
+
+
+
+       
+
+</ion-view>
